@@ -76,8 +76,9 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-      - type: file
-        path: cargo-sources.json
-        x-checker-data:
-          type: cargo
-          cargo-root: .
+      - cargo-sources.json
+      # - type: file
+      #   path: cargo-sources.json
+      #   x-checker-data:
+      #     type: cargo
+          # cargo-root: .
