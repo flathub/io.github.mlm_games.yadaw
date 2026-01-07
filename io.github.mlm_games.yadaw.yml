@@ -60,17 +60,23 @@ modules:
       - cargo --offline build --release --manifest-path Cargo.toml --verbose
       - install -Dm755 target/release/yadaw -t /app/bin/
       - install -d /app/extensions/Plugins
-      
+
       - install -Dm644 others/flathub/io.github.mlm_games.yadaw.desktop /app/share/applications/io.github.mlm_games.yadaw.desktop
       - install -Dm644 others/flathub/io.github.mlm_games.yadaw.metainfo.xml /app/share/metainfo/io.github.mlm_games.yadaw.metainfo.xml
-      
+
       - install -Dm644 others/packaging/icon.svg /app/share/icons/hicolor/scalable/apps/io.github.mlm_games.yadaw.svg
       - install -Dm644 others/packaging/icon.png /app/share/icons/hicolor/128x128/apps/io.github.mlm_games.yadaw.png
-      
+
       - install -Dm644 LICENSE /app/share/licenses/io.github.mlm_games.yadaw/LICENSE
     sources:
       - type: git
         url: https://github.com/mlm-games/yadaw.git
         tag: 0.5.6
         commit: ce62e2f9a1959ffcc67ab90e6a4896b004026d47
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
       - cargo-sources.json
+        x-checker-data:
+          type: cargo
+          cargo-root: .
