@@ -5,7 +5,8 @@ on:
     branches: [master, main]
     paths:
       - 'io.github.mlm_games.yadaw.yml'
-
+  workflow_dispatch:
+    
 jobs:
   update-cargo-sources:
     runs-on: ubuntu-latest
