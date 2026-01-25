@@ -1,0 +1,47 @@
+name: Update Cargo Sources
+
+on:
+  pull_request:
+    branches: [master, main]
+    paths:
+      - 'io.github.mlm_games.yadaw.yml'
+
+jobs:
+  update-cargo-sources:
+    runs-on: ubuntu-latest
+    if: github.actor == 'flathubbot' || github.actor == 'flatpak-external-data-checker[bot]'
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install dependencies
+        run: |
+          pip install toml aiohttp
+          wget https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/cargo/flatpak-cargo-generator.py
+
+      - name: Extract tag from manifest
+        id: get-tag
+        run: |
+          TAG=$(grep -oP 'tag: \K[0-9.]+' io.github.mlm_games.yadaw.yml)
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Clone upstream and regenerate cargo-sources.json
+        run: |
+          git clone --branch ${{ steps.get-tag.outputs.tag }} --depth 1 https://github.com/mlm-games/yadaw.git upstream
+          python3 flatpak-cargo-generator.py upstream/Cargo.lock -o cargo-sources.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cargo-sources.json
+          if git diff --staged --quiet; then
+            echo "No changes to cargo-sources.json"
+          else
+            git commit -m "Update cargo-sources.json for ${{ steps.get-tag.outputs.tag }}"
+            git push
+          fi
