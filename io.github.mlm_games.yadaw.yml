@@ -71,8 +71,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/mlm-games/yadaw.git
-        tag: 0.7.6
-        commit: a6d2df4954c241605a1a55c8db53e0c26f9bf9c9
+        tag: 0.7.8
+        commit: 6185bd335c5332600a8bf8ca91312dfc6e60b3d0
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
