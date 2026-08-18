@@ -27,7 +27,7 @@ jobs:
       - name: Extract tag from manifest
         id: get-tag
         run: |
-          TAG=$(grep -oP 'tag: \K[0-9.]+' io.github.mlm_games.yadaw.yml)
+          TAG=$(grep -oP 'tag:\s*\K\S+' io.github.mlm_games.yadaw.yml)
           echo "tag=$TAG" >> $GITHUB_OUTPUT
 
       - name: Clone upstream and regenerate cargo-sources.json
