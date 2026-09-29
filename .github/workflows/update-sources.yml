@@ -6,15 +6,15 @@ on:
     paths:
       - 'io.github.mlm_games.yadaw.yml'
   workflow_dispatch:
-    
+
 jobs:
   update-cargo-sources:
     runs-on: ubuntu-latest
-    if: github.actor == 'flathubbot' || github.actor == 'flatpak-external-data-checker[bot]'
-    
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+
     steps:
       - name: Checkout PR branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -32,7 +32,10 @@ jobs:
 
       - name: Clone upstream and regenerate cargo-sources.json
         run: |
-          git clone --branch ${{ steps.get-tag.outputs.tag }} --depth 1 https://github.com/mlm-games/yadaw.git upstream
+          if ! git clone --branch ${{ steps.get-tag.outputs.tag }} --depth 1 https://github.com/mlm-games/yadaw.git upstream; then
+            echo "::warning::Tag ${{ steps.get-tag.outputs.tag }} does not exist upstream yet; skipping cargo-sources regeneration"
+            exit 0
+          fi
           python3 flatpak-cargo-generator.py upstream/Cargo.lock -o cargo-sources.json
 
       - name: Commit and push changes
