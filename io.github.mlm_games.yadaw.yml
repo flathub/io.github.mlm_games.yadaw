@@ -63,6 +63,7 @@ modules:
 
       - install -Dm644 others/flathub/io.github.mlm_games.yadaw.desktop /app/share/applications/io.github.mlm_games.yadaw.desktop
       - install -Dm644 others/flathub/io.github.mlm_games.yadaw.metainfo.xml /app/share/metainfo/io.github.mlm_games.yadaw.metainfo.xml
+      - install -Dm644 others/flathub/io.github.mlm_games.yadaw.xml /app/share/mime/packages/io.github.mlm_games.yadaw.xml
 
       - install -Dm644 others/packaging/icon.svg /app/share/icons/hicolor/scalable/apps/io.github.mlm_games.yadaw.svg
       - install -Dm644 others/packaging/icon.png /app/share/icons/hicolor/128x128/apps/io.github.mlm_games.yadaw.png
@@ -71,8 +72,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/mlm-games/yadaw.git
-        tag: v0.10.8
-        commit: 1ed018a667788ce00d8e69824a5722df26833b96
+        tag: v0.11.3
+        commit: f3a4b4664f3c5c4eaa25f6b544fbb961eeacb197
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
