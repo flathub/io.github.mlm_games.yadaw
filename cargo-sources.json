@@ -5166,40 +5166,40 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/rlobkit-app-events/rlobkit-app-events-0.5.9.crate",
-        "sha256": "b63e277074ae181ef6e217eed5db447fe055400beaabf4edd5ac2e4d37b4751f",
-        "dest": "cargo/vendor/rlobkit-app-events-0.5.9"
+        "url": "https://static.crates.io/crates/rlobkit-app-events/rlobkit-app-events-0.6.1.crate",
+        "sha256": "598be9318d3d9206b46b8d2a28dec3005e2223095e5de28265ecc788378bf98c",
+        "dest": "cargo/vendor/rlobkit-app-events-0.6.1"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"b63e277074ae181ef6e217eed5db447fe055400beaabf4edd5ac2e4d37b4751f\", \"files\": {}}",
-        "dest": "cargo/vendor/rlobkit-app-events-0.5.9",
+        "contents": "{\"package\": \"598be9318d3d9206b46b8d2a28dec3005e2223095e5de28265ecc788378bf98c\", \"files\": {}}",
+        "dest": "cargo/vendor/rlobkit-app-events-0.6.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/rlobkit-core/rlobkit-core-0.5.9.crate",
-        "sha256": "e559e00c2f408952a84fd813d658a350d2492d1906ff78ca9457b01585e20be3",
-        "dest": "cargo/vendor/rlobkit-core-0.5.9"
+        "url": "https://static.crates.io/crates/rlobkit-core/rlobkit-core-0.6.1.crate",
+        "sha256": "29dfed1a049590467a35cccd5d6bc65c3733f2c7f22da9f620c9a4f84278efc5",
+        "dest": "cargo/vendor/rlobkit-core-0.6.1"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"e559e00c2f408952a84fd813d658a350d2492d1906ff78ca9457b01585e20be3\", \"files\": {}}",
-        "dest": "cargo/vendor/rlobkit-core-0.5.9",
+        "contents": "{\"package\": \"29dfed1a049590467a35cccd5d6bc65c3733f2c7f22da9f620c9a4f84278efc5\", \"files\": {}}",
+        "dest": "cargo/vendor/rlobkit-core-0.6.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/rlobkit-dialogs/rlobkit-dialogs-0.5.9.crate",
-        "sha256": "67345952c99cd08a8826d23cd853cda1f4ba29a942a213e1d8a576301ef84927",
-        "dest": "cargo/vendor/rlobkit-dialogs-0.5.9"
+        "url": "https://static.crates.io/crates/rlobkit-dialogs/rlobkit-dialogs-0.6.1.crate",
+        "sha256": "dd911dd3ed2eaf1a8658f49bf26d67e43a28d16805c066272f8c3fbba239f351",
+        "dest": "cargo/vendor/rlobkit-dialogs-0.6.1"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"67345952c99cd08a8826d23cd853cda1f4ba29a942a213e1d8a576301ef84927\", \"files\": {}}",
-        "dest": "cargo/vendor/rlobkit-dialogs-0.5.9",
+        "contents": "{\"package\": \"dd911dd3ed2eaf1a8658f49bf26d67e43a28d16805c066272f8c3fbba239f351\", \"files\": {}}",
+        "dest": "cargo/vendor/rlobkit-dialogs-0.6.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
